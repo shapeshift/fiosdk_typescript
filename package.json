@@ -32,7 +32,6 @@
         "jest-fetch-mock": "^2.1.2",
         "mocha": "^6.2.2",
         "node-fetch": "^2.6.0",
-        "text-encoding": "^0.7.0",
         "ts-node": "^8.4.1",
         "tslint": "^5.20.0",
         "tslint-plugin-prettier": "^2.0.1",
@@ -41,10 +40,10 @@
     },
     "dependencies": {
         "@shapeshiftoss/fiojs": ">=1.0.1-shapeshift.0 <1.0.1",
-        "@types/text-encoding": "0.0.35",
         "bip39": "^3.0.2",
         "hdkey": "^1.1.1",
         "validate": "^5.1.0",
+        "web-encoding": "^1.1.0",
         "wif": "^2.0.6"
     },
     "jest": {

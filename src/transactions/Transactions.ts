@@ -1,5 +1,5 @@
 import { Fio } from '@shapeshiftoss/fiojs'
-import { TextDecoder, TextEncoder } from 'text-encoding'
+import { TextDecoder, TextEncoder } from 'web-encoding'
 import { AbiResponse } from '../entities/AbiResponse'
 import { RawTransaction } from '../entities/RawTransaction'
 import { ValidationError } from '../entities/ValidationError'
