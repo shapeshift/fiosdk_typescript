@@ -1,4 +1,4 @@
-import { Fio } from '@fioprotocol/fiojs'
+import { Fio } from '@shapeshiftoss/fiojs'
 import { TextDecoder, TextEncoder } from 'text-encoding'
 import { AbiResponse } from '../entities/AbiResponse'
 import { RawTransaction } from '../entities/RawTransaction'

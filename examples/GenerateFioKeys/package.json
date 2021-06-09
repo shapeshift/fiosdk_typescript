@@ -9,7 +9,7 @@
   "author": "Dapix, Inc. Copyright(c) 2020",
   "license": "MIT",
   "dependencies": {
-    "@fioprotocol/fiojs": "^0.9.0",
-    "@fioprotocol/fiosdk": "^0.9.0"
+    "@shapeshiftoss/fiojs": "^0.9.0",
+    "@shapeshiftoss/fiosdk": "^0.9.0"
   }
 }

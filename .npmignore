@@ -1,0 +1,14 @@
+*
+!lib/**
+!src/**
+!tests/**
+!types/**
+!index.js
+!jest.config.js
+!LICENSE.md
+!package.json
+!README.md
+!setupJest.js
+!tsconfig.json
+!tslint.json
+!yarn.lock

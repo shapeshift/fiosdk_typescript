@@ -1,4 +1,4 @@
-import { Fio } from '@fioprotocol/fiojs'
+import { Fio } from '@shapeshiftoss/fiojs'
 import {
   AbiResponse,
   AddPublicAddressResponse,
@@ -40,7 +40,7 @@ import { ValidationError } from './entities/ValidationError'
 /**
  * @ignore
  */
-const { Ecc } = require('@fioprotocol/fiojs')
+const { Ecc } = require('@shapeshiftoss/fiojs')
 
 /**
  * @ignore
