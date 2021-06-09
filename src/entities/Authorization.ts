@@ -1,4 +1,4 @@
-export class Autorization {
+export class Authorization {
   actor: string
   permission: string
 

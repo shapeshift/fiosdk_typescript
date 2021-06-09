@@ -1,4 +1,4 @@
-import { Autorization } from '../../entities/Autorization'
+import { Authorization } from '../../entities/Authorization'
 import { RawAction } from '../../entities/RawAction'
 import { RawTransaction } from '../../entities/RawTransaction'
 import { Transactions } from '../Transactions'
@@ -19,7 +19,7 @@ export abstract class SignedTransaction extends Transactions {
     rawaction.account = this.getAccount()
     const actor = await this.getActor()
 
-    rawaction.authorization.push(new Autorization(actor))
+    rawaction.authorization.push(new Authorization(actor))
     rawaction.account = this.getAccount()
     rawaction.name = this.getAction()
     rawaction.data = this.getData()
