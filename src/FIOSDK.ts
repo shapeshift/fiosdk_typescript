@@ -1,4 +1,4 @@
-import { Fio } from '@shapeshiftoss/fiojs'
+import { Fio, PrivateKey } from '@shapeshiftoss/fiojs'
 import {
   AbiResponse,
   AddPublicAddressResponse,
@@ -56,7 +56,7 @@ export class FIOSDK {
   /**
    * @ignore
    */
-  public static async createPrivateKey(entropy: Buffer): Promise<any> {
+  public static async createPrivateKey(entropy: Buffer) {
     const bip39 = require('bip39')
     const mnemonic = bip39.entropyToMnemonic(entropy)
     return await FIOSDK.createPrivateKeyMnemonic(mnemonic)
@@ -89,7 +89,7 @@ export class FIOSDK {
    *
    * @returns FIO public key derived from the FIO private key.
    */
-  public static derivedPublicKey(fioPrivateKey: string) {
+  public static derivedPublicKey(fioPrivateKey: PrivateKey) {
     const publicKey = Ecc.privateToPublic(fioPrivateKey)
     return { publicKey }
   }
@@ -236,7 +236,7 @@ export class FIOSDK {
   /**
    * the fio private key of the client sending requests to FIO API.
    */
-  public privateKey: string
+  public privateKey: PrivateKey
 
   /**
    * the fio public key of the client sending requests to FIO API.
@@ -275,7 +275,7 @@ export class FIOSDK {
    * @param technologyProviderId Default FIO Address of the wallet which generates transactions.
    */
   constructor(
-    privateKey: string,
+    privateKey: PrivateKey,
     publicKey: string,
     baseUrl: string,
     fetchjson: FetchJson,

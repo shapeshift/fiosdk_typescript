@@ -1,3 +1,4 @@
+import { PrivateKey } from '@shapeshiftoss/fiojs'
 import { Transactions } from '../Transactions'
 
 export abstract class Query<T> extends Transactions {
@@ -10,7 +11,7 @@ export abstract class Query<T> extends Transactions {
 
   isEncrypted = false
 
-  async execute(publicKey: string, privateKey: string = ''): Promise<any> {
+  async execute(publicKey: string, privateKey: PrivateKey = ''): Promise<any> {
     this.publicKey = publicKey
     this.privateKey = privateKey
     if (!this.isEncrypted) {

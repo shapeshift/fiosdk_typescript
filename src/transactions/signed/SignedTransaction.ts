@@ -1,3 +1,4 @@
+import { PrivateKey } from '@shapeshiftoss/fiojs'
 import { Authorization } from '../../entities/Authorization'
 import { RawAction } from '../../entities/RawAction'
 import { RawTransaction } from '../../entities/RawTransaction'
@@ -10,7 +11,7 @@ export abstract class SignedTransaction extends Transactions {
 
   public abstract getData(): any
 
-  public async execute(privateKey: string, publicKey: string, dryRun = false): Promise<any> {
+  public async execute(privateKey: PrivateKey, publicKey: string, dryRun = false): Promise<any> {
     this.privateKey = privateKey
     this.publicKey = publicKey
 

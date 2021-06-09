@@ -1,4 +1,4 @@
-import { Fio } from '@shapeshiftoss/fiojs'
+import { Fio, PrivateKey } from '@shapeshiftoss/fiojs'
 import { TextDecoder, TextEncoder } from 'web-encoding'
 import { AbiResponse } from '../entities/AbiResponse'
 import { RawTransaction } from '../entities/RawTransaction'
@@ -19,7 +19,7 @@ export class Transactions {
 
   public static fetchJson: FetchJson
   public publicKey: string = ''
-  public privateKey: string = ''
+  public privateKey: PrivateKey = ''
   public serilizeEndpoint: string = 'chain/serialize_json'
 
   public validationData: object = {}
@@ -63,7 +63,7 @@ export class Transactions {
   }
 
   public async pushToServer(transaction: RawTransaction, endpoint: string, dryRun: boolean): Promise<any> {
-    const privky: string[] = new Array<string>()
+    const privky: PrivateKey[] = new Array<PrivateKey>()
     privky.push(this.privateKey)
     let chain, block
     try {
@@ -141,12 +141,12 @@ export class Transactions {
     }
   }
 
-  public getCipherContent(contentType: string, content: any, privateKey: string, publicKey: string) {
+  public getCipherContent(contentType: string, content: any, privateKey: PrivateKey, publicKey: string) {
     const cipher = Fio.createSharedCipher({ privateKey, publicKey, textEncoder, textDecoder })
     return cipher.encrypt(contentType, content)
   }
 
-  public getUnCipherContent(contentType: string, content: any, privateKey: string, publicKey: string) {
+  public getUnCipherContent(contentType: string, content: any, privateKey: PrivateKey, publicKey: string) {
     const cipher = Fio.createSharedCipher({ privateKey, publicKey, textEncoder, textDecoder })
     return cipher.decrypt(contentType, content)
   }
