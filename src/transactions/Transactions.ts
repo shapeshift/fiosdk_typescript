@@ -141,9 +141,9 @@ export class Transactions {
     }
   }
 
-  public getCipherContent(contentType: string, content: any, privateKey: PrivateKey, publicKey: string) {
+  public getCipherContent(contentType: string, content: any, privateKey: PrivateKey, publicKey: string, iv?: Buffer) {
     const cipher = Fio.createSharedCipher({ privateKey, publicKey, textEncoder, textDecoder })
-    return cipher.encrypt(contentType, content)
+    return cipher.encrypt(contentType, content, iv)
   }
 
   public getUnCipherContent(contentType: string, content: any, privateKey: PrivateKey, publicKey: string) {
