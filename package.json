@@ -39,7 +39,7 @@
         "typescript": "^3.6.4"
     },
     "dependencies": {
-        "@shapeshiftoss/fiojs": ">=1.0.1-shapeshift.0 <1.0.1",
+        "@shapeshiftoss/fiojs": "1.0.1-shapeshift.1",
         "bip39": "^3.0.2",
         "hdkey": "^1.1.1",
         "validate": "^5.1.0",
