@@ -20,7 +20,7 @@ export class RejectFundsRequest extends SignedTransaction {
     this.validationRules = validationRules.rejectFunds
   }
 
-  getData(): any {
+  async getData() {
     let actor = this.getActor()
     let data = {
       fio_request_id: this.fioreqid,

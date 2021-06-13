@@ -18,21 +18,21 @@ export class GetObtData extends Query<GetObtDataResponse> {
     this.tokenCode = tokenCode
   }
 
-  public getData() {
+  public async getData() {
     return { fio_public_key: this.fio_public_key, limit: this.limit || null, offset: this.offset || null }
   }
 
-  public decrypt(result: any): any {
+  public async decrypt(result: any) {
     if (result.obt_data_records && result.obt_data_records.length > 0) {
       const obtDataRecords: GetObtDataRecord[] = []
-      result.obt_data_records.forEach((obtDataRecord: GetObtDataRecord) => {
+      for (const obtDataRecord of result.obt_data_records as Iterable<GetObtDataRecord>) {
         let content
         const contentType = 'record_obt_data_content'
         try {
           if (obtDataRecord.payer_fio_public_key === this.publicKey) {
-            content = this.getUnCipherContent(contentType, obtDataRecord.content, this.privateKey, obtDataRecord.payee_fio_public_key)
+            content = await this.getUnCipherContent(contentType, obtDataRecord.content, this.privateKey, obtDataRecord.payee_fio_public_key)
           } else {
-            content = this.getUnCipherContent(contentType, obtDataRecord.content, this.privateKey, obtDataRecord.payer_fio_public_key)
+            content = await this.getUnCipherContent(contentType, obtDataRecord.content, this.privateKey, obtDataRecord.payer_fio_public_key)
           }
         } catch (e) {
           // UnCipherContent error
@@ -43,7 +43,7 @@ export class GetObtData extends Query<GetObtDataResponse> {
           obtDataRecord.content = content
         }
         obtDataRecords.push(obtDataRecord)
-      })
+      }
       return { obt_data_records: obtDataRecords, more: result.more }
     } else {
       return result

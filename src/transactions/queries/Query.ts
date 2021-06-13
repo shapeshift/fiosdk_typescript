@@ -4,9 +4,9 @@ import { Transactions } from '../Transactions'
 export abstract class Query<T> extends Transactions {
   abstract ENDPOINT: string
 
-  abstract getData(): any
+  abstract getData(): Promise<any>
 
-  decrypt(result: any): any {
+  async decrypt(result: any): Promise<any> {
   }
 
   isEncrypted = false
@@ -15,11 +15,11 @@ export abstract class Query<T> extends Transactions {
     this.publicKey = publicKey
     this.privateKey = privateKey
     if (!this.isEncrypted) {
-      return this.executeCall(this.getEndPoint(), JSON.stringify(this.getData()))
+      return this.executeCall(this.getEndPoint(), JSON.stringify(await this.getData()))
     } else {
       try {
-        const result = await this.executeCall(this.getEndPoint(), JSON.stringify(this.getData()))
-        return this.decrypt(result)
+        const result = await this.executeCall(this.getEndPoint(), JSON.stringify(await this.getData()))
+        return await this.decrypt(result)
       } catch (error) {
         throw error
       }

@@ -10,7 +10,7 @@ export class GetFioBalance extends Query<BalanceResponse> {
     this.keyToUse = othersBalance || ''
   }
 
-  getData() {
+  async getData() {
     return { fio_public_key: this.keyToUse || this.publicKey }
   }
 

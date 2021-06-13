@@ -57,9 +57,9 @@ export class RequestNewFunds extends SignedTransaction {
     }
   }
 
-  public getData(): any {
+  public async getData() {
     const actor = this.getActor()
-    const cipherContent = this.getCipherContent('new_funds_content', this.content, this.privateKey, this.payerFioPublicKey)
+    const cipherContent = await this.getCipherContent('new_funds_content', this.content, this.privateKey, this.payerFioPublicKey)
     const data = {
       payer_fio_address: this.payerFioAddress,
       payee_fio_address: this.payeeFioAddress,

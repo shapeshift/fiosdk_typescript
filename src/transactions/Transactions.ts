@@ -141,13 +141,13 @@ export class Transactions {
     }
   }
 
-  public getCipherContent(contentType: string, content: any, privateKey: PrivateKey, publicKey: string, iv?: Buffer) {
-    const cipher = Fio.createSharedCipher({ privateKey, publicKey, textEncoder, textDecoder })
+  public async getCipherContent(contentType: string, content: any, privateKey: PrivateKey, publicKey: string, iv?: Buffer) {
+    const cipher = await Fio.createSharedCipher({ privateKey, publicKey, textEncoder, textDecoder })
     return cipher.encrypt(contentType, content, iv)
   }
 
-  public getUnCipherContent(contentType: string, content: any, privateKey: PrivateKey, publicKey: string) {
-    const cipher = Fio.createSharedCipher({ privateKey, publicKey, textEncoder, textDecoder })
+  public async getUnCipherContent(contentType: string, content: any, privateKey: PrivateKey, publicKey: string) {
+    const cipher = await Fio.createSharedCipher({ privateKey, publicKey, textEncoder, textDecoder })
     return cipher.decrypt(contentType, content)
   }
 

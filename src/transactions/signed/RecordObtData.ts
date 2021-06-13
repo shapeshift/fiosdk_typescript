@@ -68,9 +68,9 @@ export class RecordObtData extends SignedTransaction {
 
   }
 
-  getData(): any {
+  async getData() {
     let actor = this.getActor()
-    const cipherContent = this.getCipherContent('record_obt_data_content', this.content, this.privateKey, this.payeeFioPublicKey)
+    const cipherContent = await this.getCipherContent('record_obt_data_content', this.content, this.privateKey, this.payeeFioPublicKey)
     let data = {
       payer_fio_address: this.payerFioAddress,
       payee_fio_address: this.payeeFioAddress,

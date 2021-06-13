@@ -33,7 +33,7 @@ export class TransferTokens extends SignedTransaction {
     }
   }
 
-  getData(): any {
+  async getData() {
     let actor = this.getActor()
 
     let data = {

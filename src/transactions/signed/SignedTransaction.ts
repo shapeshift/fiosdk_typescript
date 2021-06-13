@@ -9,7 +9,7 @@ export abstract class SignedTransaction extends Transactions {
   public abstract ACTION: string
   public abstract ACCOUNT: string
 
-  public abstract getData(): any
+  public abstract getData(): Promise<any>
 
   public async execute(privateKey: PrivateKey, publicKey: string, dryRun = false): Promise<any> {
     this.privateKey = privateKey
@@ -23,7 +23,7 @@ export abstract class SignedTransaction extends Transactions {
     rawaction.authorization.push(new Authorization(actor))
     rawaction.account = this.getAccount()
     rawaction.name = this.getAction()
-    rawaction.data = this.getData()
+    rawaction.data = await this.getData()
     rawTransaction.actions.push(rawaction)
     const result = await this.pushToServer(rawTransaction, this.getEndPoint(), dryRun)
     return this.prepareResponse(result)

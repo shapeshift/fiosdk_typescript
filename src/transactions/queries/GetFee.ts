@@ -23,7 +23,7 @@ export class GetFee extends Query<FioFeeResponse> {
     }
   }
 
-  public getData() {
+  public async getData() {
     const data = { end_point: this.endPoint, fio_address: this.fioAddress || null }
     return data
   }

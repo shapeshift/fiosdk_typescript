@@ -14,7 +14,7 @@ export class GetDomains extends Query<FioDomainsResponse> {
     this.offset = offset
   }
 
-  public getData() {
+  public async getData() {
     return { fio_public_key: this.fioPublicKey, limit: this.limit || null, offset: this.offset || null }
   }
 }

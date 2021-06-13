@@ -21,7 +21,7 @@ export class CancelFundsRequest extends SignedTransaction {
     this.validationRules = validationRules.cancelFundsRequestRules
   }
 
-  public getData(): any {
+  public async getData() {
     const actor = this.getActor()
     const data = {
       fio_request_id: this.fioRequestId,

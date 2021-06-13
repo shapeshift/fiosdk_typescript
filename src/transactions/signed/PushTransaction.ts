@@ -15,7 +15,7 @@ export class PushTransaction extends SignedTransaction {
     this.data = data
   }
 
-  getData(): any {
+  async getData() {
     let actor = this.getActor()
     let data = {
       ...this.data,

@@ -10,7 +10,7 @@ export class AvailabilityCheck extends Query<AvailabilityResponse> {
     this.fioName = fioName
   }
 
-  public getData() {
+  public async getData() {
     return { fio_name: this.fioName }
   }
 }

@@ -20,7 +20,7 @@ export class SetFioDomainVisibility extends SignedTransaction {
     this.technologyProviderId = technologyProviderId
   }
 
-  public getData(): any {
+  public async getData() {
     this.validationData = { fioDomain: this.fioDomain, tpid: this.technologyProviderId || null }
     this.validationRules = validationRules.registerFioDomain
     const actor = this.getActor()

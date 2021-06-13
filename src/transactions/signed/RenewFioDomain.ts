@@ -21,7 +21,7 @@ export class RenewFioDomain extends SignedTransaction {
     this.validationRules = validationRules.renewFioDomain
   }
 
-  getData(): any {
+  async getData() {
     let actor = this.getActor()
     let data = {
       fio_domain: this.fioDomain,

@@ -11,7 +11,7 @@ export class GetAbi extends Query<AbiResponse> {
     this.accountName = accountName
   }
 
-  getData() {
+  async getData() {
     return {
       account_name: this.accountName
     }

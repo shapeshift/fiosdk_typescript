@@ -21,7 +21,7 @@ export class RenewFioAddress extends SignedTransaction {
     this.validationRules = validationRules.renewFioAddress
   }
 
-  getData(): any {
+  async getData() {
     let actor = this.getActor()
     let data = {
       fio_address: this.fioAddress,

@@ -10,7 +10,7 @@ export class GetNames extends Query<FioNamesResponse> {
     this.fioPublicKey = fioPublicKey
   }
 
-  public getData() {
+  public async getData() {
     return { fio_public_key: this.fioPublicKey }
   }
 }

@@ -15,7 +15,7 @@ export class GetPublicAddress extends Query<PublicAddressResponse> {
     this.tokenCode = tokenCode
   }
 
-  getData() {
+  async getData() {
     return {
       fio_address: this.fioAddress,
       chain_code: this.chainCode,

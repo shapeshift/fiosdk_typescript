@@ -23,7 +23,7 @@ export class AddPublicAddress extends SignedTransaction {
     this.validationRules = validationRules.addPublicAddressRules
   }
 
-  public getData(): any {
+  public async getData() {
     const actor = this.getActor()
     const data = {
       fio_address: this.fioAddress,

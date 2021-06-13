@@ -22,7 +22,7 @@ export class RegisterFioDomain extends SignedTransaction {
     this.validationRules = validationRules.registerFioDomain
   }
 
-  getData(): any {
+  async getData() {
     let actor = this.getActor()
     let data = {
       fio_domain: this.fioDomain,

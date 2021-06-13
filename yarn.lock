@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@shapeshiftoss/fiojs@1.0.1-shapeshift.1":
-  version "1.0.1-shapeshift.1"
-  resolved "https://registry.yarnpkg.com/@shapeshiftoss/fiojs/-/fiojs-1.0.1-shapeshift.1.tgz#6046d32de82411c627087437e32b495943e0b356"
-  integrity sha512-dGQ8LGjyPsLrVM/dB5tbSCF8jaiOd+F/SGvcwLQQPKqZwDCbk3+p5mPVMNV5L/S4wvSxf/BdwpfDjcS9wclemw==
+"@shapeshiftoss/fiojs@1.0.1-shapeshift.2":
+  version "1.0.1-shapeshift.2"
+  resolved "https://registry.yarnpkg.com/@shapeshiftoss/fiojs/-/fiojs-1.0.1-shapeshift.2.tgz#d439c542b627f5a79ffa3a4ab0c5804c8d3a5452"
+  integrity sha512-1pu30rI6mI+47uv9CqnG3+ixLuXjWqbETxY9XK9AlEQuwnj6paFILyNwQqQu2Lfpv1zqqdDGbxISUbXOx2k6bA==
   dependencies:
     ajv "^6.10.2"
     babel-runtime "6.26.0"
