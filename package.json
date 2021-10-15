@@ -8,7 +8,9 @@
         "client",
         "blockchain"
     ],
-    "main": "index.js",
+    "main": "lib/FIOSDK.js",
+    "source": "src/FIOSDK.ts",
+    "types": "lib/FIOSDK.d.ts",
     "directories": {
         "lib": "lib",
         "test": "tests"
